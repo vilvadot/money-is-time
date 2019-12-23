@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      .container{
+        flex-direction: column;
+        padding: 2rem;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+      }
+      .title{
+        text-align: center;
+      }
+      .save--button{
+        border:none;
+        color:black;
+        background:white;
+        border: 2px solid black;
+        padding: 5px 3px;
+        border-radius: 8px;
+        width: 100%;
+        margin-top: 16px;
+        text-align: center;
+        transition: all .2s ease-in-out;
+        font-size:13px;
+      }
+      .save--button:hover{
+        cursor: pointer;
+        background: black;
+        color:white;
+      }
+      .notice{
+        color: #888;
+        margin-top: 4px;
+      }
+      #rate{
+        border-radius: 4px;
+        border:1px solid #999;
+        padding: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class='title'>What is your hourly rate?</h3>
+      <input type="text" name="rate" id="rate" />
+      <small class='notice'>(currency is up to you)</small>
+      <button class="save--button">Save</button>
+    </div>
+    <script src="scripts/popup.js"></script>
+  </body>
+</html>
