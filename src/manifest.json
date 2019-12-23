@@ -1,0 +1,18 @@
+{
+  "description": "Adds a time cost to product prices online.",
+  "manifest_version": 2,
+  "name": "money-is-time",
+  "version": "1.0",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
+  "page_action": {
+    "default_icon": "icons/icon_active.svg",
+    "browser_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.es/*"],
+      "js": ["amazon.js"]
+    }
+  ],
+  "permissions": ["activeTab", "tabs"]
+}
