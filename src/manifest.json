@@ -23,8 +23,11 @@
   "content_scripts": [
     {
       "matches": ["*://*.amazon.es/*"],
-      "js": ["scripts/amazon.js"]
+      "js": ["shops/amazon.js"]
     }
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "permissions": ["storage"]
 }

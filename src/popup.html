@@ -36,7 +36,6 @@
         color: white;
       }
       .notice {
-        color: #888;
         margin-top: 4px;
       }
       #rate {
@@ -53,6 +52,12 @@
       .enable--checkbox input:hover{
         cursor: pointer;
       }
+      .refreshReminder{
+        color: #888;
+        text-align: center;
+        margin-top: 4px;
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -63,9 +68,10 @@
       </div>
       <h3 class="title">What is your hourly rate?</h3>
       <input type="text" name="rate" id="rate" />
-      <small class="notice">(currency is up to you)</small>
+      <small class="notice">(Currency is up to you)</small>
       <button class="save--button">Save</button>
+      <small class="refreshReminder">*Remember to refresh tabs for effects to take place</small c>
     </div>
-    <script src="scripts/popup.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>

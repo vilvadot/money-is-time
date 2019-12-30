@@ -1,7 +1,6 @@
 const LIST_VIEW_PRICE = ".a-price-whole";
 const GENERIC_PRICE = ":not(.a-color-price) > .a-color-price"; // avoids the insertion of duplicated nodes
 const PRICE_SELECTORS = [GENERIC_PRICE, LIST_VIEW_PRICE];
-const DEFAULT_RATE = 6;
 
 const cleanCurrencies = priceString => {
   const numberRegex = /\d+(,|.)?\d+/g;
@@ -33,12 +32,12 @@ const addTimeCost = ($node, selector, rate) => {
   $insertPoint.appendChild($cost);
 };
 
-const parseRate = value => parseFloat(value) || DEFAULT_RATE;
+const parseRate = value => parseFloat(value)
 
 const getConfig = () => {
   return new Promise(resolve => {
     browser.storage.local.get().then(state => {
-      const rate = parseRate(state.rate) || DEFAULT_RATE;
+      const rate = parseRate(state.rate)
       const isEnabled = state.isEnabled;
       resolve({ rate, isEnabled });
     });

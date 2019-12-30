@@ -1,8 +1,3 @@
-const INITIAL_STATE = {
-  rate: 6,
-  isEnabled: true
-}
-
 const $rateInput = document.querySelector("#rate");
 const $enableCheckbox = document.querySelector("#enable");
 const $save = document.querySelector(".save--button");
@@ -26,18 +21,8 @@ const togglePrices = event => {
   $enableCheckbox.checked = isEnabled
 }
 
-const setInitialState = () => {
-  browser.storage.local.set(INITIAL_STATE);
-  conso
-}
-
 // Sync UI with storage
 browser.storage.local.get().then(state => {
-  console.log(JSON.stringify({state}))
-  const isFirstExecution = !Object.keys(state).length
-  if(isFirstExecution){
-    setInitialState()
-  }
   $rateInput.value = parseRate(state.rate)
   $enableCheckbox.checked = state.isEnabled
 })
