@@ -33,11 +33,14 @@ const addTimeCost = ($node, selector, rate) => {
   $insertPoint.appendChild($cost);
 };
 
+const DEFAULT_RATE = 6
+const parseRate = value => parseFloat(value) || DEFAULT_RATE
+
 const readHourlyRate = () => {
   return new Promise(resolve => {
     browser.storage.local.get().then(state => {
-      const rate = parseFloat(state.rate)
-      resolve(state.rate);
+      const rate = parseRate(state.rate) || DEFAULT_RATE
+      resolve(rate);
     });
   });
 }
