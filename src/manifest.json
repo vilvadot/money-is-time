@@ -7,21 +7,16 @@
   "browser_action": {
     "browser_style": true,
     "default_icon": {
-      "16": "icons/icon_active.svg",
-      "32": "icons/icon_active.svg"
+      "16": "icons/icon.svg",
+      "32": "icons/icon.svg"
     },
     "default_title": "Money is time 💸",
     "default_popup": "popup.html",
     "theme_icons": [
       {
-        "light": "icons/icon_active.svg",
-        "dark": "icons/icon_active.svg",
+        "light": "icons/icon.svg",
+        "dark": "icons/icon_darkmode.svg",
         "size": 16
-      },
-      {
-        "light": "icons/icon_active.svg",
-        "dark": "icons/icon_active.svg",
-        "size": 32
       }
     ]
   },

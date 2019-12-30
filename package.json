@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "You don't buy things with money. But with the time you spent to earn that money.",
   "scripts": {
-    "dev": "nodemon --watch src --exec npm run zip",
+    "dev": "nodemon --watch src/ -e js,html,json,svg --exec npm run zip",
     "zip:firefox": "cd src && zip -r ../dist/firefox.zip *",
     "zip": "echo 'Zipping extensions...' && npm run zip:firefox"
   },

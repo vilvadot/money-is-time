@@ -1,17 +1,17 @@
 const LIST_VIEW_PRICE = ".a-price-whole";
-const GENERIC_PRICE = ".a-color-price";
+const GENERIC_PRICE = ":not(.a-color-price) > .a-color-price"; // avoids the insertion of duplicated nodes
 const PRICE_SELECTORS = [GENERIC_PRICE, LIST_VIEW_PRICE];
-const CURRENCY_STRINGS = ["&nbsp;€", "EUR "];
+const DEFAULT_RATE = 6;
 
-// TODO: Pillarlo del localStorage
-const HOURLY_RATE = 30;
-
-const cleanCurrencies = price => {
-  let cleanPrice = price.trim();
-  CURRENCY_STRINGS.forEach(currency => {
-    cleanPrice = cleanPrice.replace(currency, "");
-  });
-  return parseFloat(cleanPrice);
+const cleanCurrencies = priceString => {
+  const numberRegex = /\d+(,|.)?\d+/g;
+  const number = priceString
+    .trim()
+    .match(numberRegex)[0]
+    .replace(",", ".");
+  const price = parseFloat(number);
+  console.log({ price, priceString });
+  return price;
 };
 
 const calcCost = (price, rate) => Math.ceil((price / rate) * 10) / 10;
@@ -33,25 +33,27 @@ const addTimeCost = ($node, selector, rate) => {
   $insertPoint.appendChild($cost);
 };
 
-const DEFAULT_RATE = 6
-const parseRate = value => parseFloat(value) || DEFAULT_RATE
+const parseRate = value => parseFloat(value) || DEFAULT_RATE;
 
-const readHourlyRate = () => {
+const getConfig = () => {
   return new Promise(resolve => {
     browser.storage.local.get().then(state => {
-      const rate = parseRate(state.rate) || DEFAULT_RATE
-      resolve(rate);
+      const rate = parseRate(state.rate) || DEFAULT_RATE;
+      const isEnabled = state.isEnabled;
+      resolve({ rate, isEnabled });
     });
   });
-}
+};
 
 (() => {
-  readHourlyRate().then(rate => {
-    PRICE_SELECTORS.forEach(selector => {
-      const $prices = document.querySelectorAll(selector);
-      $prices.forEach($price => {
-        addTimeCost($price, selector, rate);
+  getConfig().then(state => {
+    if (state.isEnabled) {
+      PRICE_SELECTORS.forEach(selector => {
+        const $prices = document.querySelectorAll(selector);
+        $prices.forEach($price => {
+          addTimeCost($price, selector, state.rate);
+        });
       });
-    });
-  })
+    }
+  });
 })();

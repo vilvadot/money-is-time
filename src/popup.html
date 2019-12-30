@@ -5,52 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <style>
-      .container{
+      .container {
         flex-direction: column;
         padding: 2rem;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         width: 200px;
       }
-      .title{
+      .title {
         text-align: center;
         margin-top: 0;
       }
-      .save--button{
-        border:none;
-        color:black;
-        background:white;
+      .save--button {
+        border: none;
+        color: black;
+        background: white;
         border: 2px solid black;
         padding: 5px 3px;
         border-radius: 8px;
         width: 100%;
         margin-top: 16px;
         text-align: center;
-        transition: all .2s ease-in-out;
-        font-size:13px;
+        transition: all 0.2s ease-in-out;
+        font-size: 13px;
       }
-      .save--button:hover{
+      .save--button:hover {
         cursor: pointer;
         background: black;
-        color:white;
+        color: white;
       }
-      .notice{
+      .notice {
         color: #888;
         margin-top: 4px;
       }
-      #rate{
+      #rate {
         border-radius: 4px;
-        border:1px solid #999;
+        border: 1px solid #999;
         padding: 4px;
+      }
+      .enable--checkbox{
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+        display: flex;
+      }
+      .enable--checkbox input:hover{
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h3 class='title'>What is your hourly rate?</h3>
-      <input type="text" name="rate" id="rate"/>
-      <small class='notice'>(currency is up to you)</small>
+      <div class="enable--checkbox">
+        <label for="enable">Enabled</label>
+        <input type="checkbox" name="enable" id="enable" checked="true" />
+      </div>
+      <h3 class="title">What is your hourly rate?</h3>
+      <input type="text" name="rate" id="rate" />
+      <small class="notice">(currency is up to you)</small>
       <button class="save--button">Save</button>
     </div>
     <script src="scripts/popup.js"></script>
