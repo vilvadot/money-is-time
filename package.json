@@ -1,12 +1,20 @@
 {
-  "name": "price-extension",
+  "name": "money-is-time-extension",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "You don't buy things with money. But with the time you spent to earn that money.",
   "scripts": {
-    "release:firefox": "zip dist/firefox.zip src/*"
+    "dev": "nodemon --watch src/*/** npm run release",
+    "zip:firefox": "cd src && zip -r ../dist/firefox.zip *",
+    "zip": "echo 'Zipping extensions...' && npm run zip:firefox"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "extension",
+    "browser",
+    "firefox"
+  ],
+  "author": "vilvadot",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }

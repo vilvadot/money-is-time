@@ -33,17 +33,17 @@ const addTimeCost = ($node, selector, rate) => {
   $insertPoint.appendChild($cost);
 };
 
-const readRate = () => {
+const readHourlyRate = () => {
   return new Promise(resolve => {
     browser.storage.local.get().then(state => {
       const rate = parseFloat(state.rate)
       resolve(state.rate);
     });
   });
-};
+}
 
 (() => {
-  readRate().then(rate => {
+  readHourlyRate().then(rate => {
     PRICE_SELECTORS.forEach(selector => {
       const $prices = document.querySelectorAll(selector);
       $prices.forEach($price => {
