@@ -36,6 +36,7 @@ const addTimeCost = ($node, selector, rate) => {
 const readRate = () => {
   return new Promise(resolve => {
     browser.storage.local.get().then(state => {
+      const rate = parseFloat(state.rate)
       resolve(state.rate);
     });
   });

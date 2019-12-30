@@ -3,7 +3,7 @@ const $rateInput = document.querySelector("#rate");
 const $save = document.querySelector(".save--button");
 
 const updateRate = value => {
-  const updatedRate = $rateInput.value;
+  const updatedRate = parseFloat($rateInput.value);
   browser.storage.local.set({
     rate: updatedRate
   });
@@ -12,7 +12,7 @@ const updateRate = value => {
 
 // Set initial Value
 browser.storage.local.get().then(state => {
-  $rateInput.value = state.rate
+  $rateInput.value = parseFloat(state.rate)
 })
 
 $save.addEventListener("click", updateRate);
