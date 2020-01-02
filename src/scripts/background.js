@@ -1,3 +1,5 @@
+import extension from './util/extension'
+
 const INITIAL_STATE = {
   rate: 6,
   isEnabled: true

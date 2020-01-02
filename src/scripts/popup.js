@@ -9,7 +9,6 @@ const updateRate = () => {
   browser.storage.local.set({
     rate: updatedRate
   });
-  console.log("Rate updated:", updatedRate);
 };
 
 const togglePrices = event => {

@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "You don't buy things with money. But with the time you spent to earn that money.",
   "scripts": {
-    "dev": "nodemon --watch src/ -e js,html,json,svg --exec npm run zip",
-    "zip:firefox": "cd src && zip -r ../dist/firefox.zip *",
+    "dev": "nodemon --watch src/ -e js,html,json,svg --exec npm run release",
+    "copy-files": "cp -r src/. dist && cp index.html dist",
+    "build": "parcel build src/scripts/background.js src/scripts/popup.js --out-dir dist/scripts/",
+    "release": "npm run copy-files && npm run build && npm run zip",
+    "zip:firefox": "cd dist && zip -r ../bin/firefox.zip *",
     "zip": "echo 'Zipping extensions...' && npm run zip:firefox"
   },
   "keywords": [
@@ -15,6 +18,7 @@
   "author": "vilvadot",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "parcel": "^1.12.4"
   }
 }
