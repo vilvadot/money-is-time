@@ -1,24 +1,13 @@
+import getConfig from "../util/getConfig";
+import calcTime from "../util/calcTime";
+import extractPrice from "../util/extractPrice";
+
+const PERCENTAGE_SYMBOL = "%";
 const LIST_VIEW_PRICE = ".a-price-whole";
 const GENERIC_PRICE = ":not(.a-color-price) > .a-color-price"; // avoids the insertion of duplicated nodes
 const PRICE_SELECTORS = [GENERIC_PRICE, LIST_VIEW_PRICE];
-const PERCENTAGE_SYMBOL = "%";
 
-const cleanCurrencies = (fullPrice = "") => {
-  const numberRegex = /\d+(,|.)?\d+/g;
-  const number = fullPrice
-  .trim()
-  .match(numberRegex)[0]
-  .replace('.', '')
-  .replace(",", ".");
-  const price = parseFloat(number);
-  console.log({fullPrice, price})
-
-  return price;
-};
-
-const calcCost = (price, rate) => Math.ceil((price / rate) * 10) / 10;
-
-const addTimeCost = ($node, selector, rate) => {
+const injectCost = ($node, selector, rate) => {
   const $cost = document.createElement("b");
   $cost.style.fontSize = ".8em";
 
@@ -31,42 +20,28 @@ const addTimeCost = ($node, selector, rate) => {
 
   if (target.includes(PERCENTAGE_SYMBOL)) return;
 
-  const price = cleanCurrencies(target);
+  const price = extractPrice(target);
 
   if (!price) return;
 
-  const timeCost = calcCost(price, rate);
+  const timeCost = calcTime(price, rate);
 
   $cost.innerHTML = ` (🛠 ${timeCost} h)`;
 
   $insertPoint.appendChild($cost);
 };
 
-const parseRate = value => parseFloat(value);
-
-const getConfig = () => {
-  return new Promise(resolve => {
-    browser.storage.local.get().then(state => {
-      const rate = parseRate(state.rate);
-      const isEnabled = state.isEnabled;
-      resolve({ rate, isEnabled });
-    });
-  });
-};
-
-(() => {
-  getConfig().then(state => {
+getConfig().then(state => {
+  try {
     if (state.isEnabled) {
       PRICE_SELECTORS.forEach(selector => {
         const $prices = document.querySelectorAll(selector);
         $prices.forEach($price => {
-          try{
-            console.log({rate: state.rate})
-            addTimeCost($price, selector, state.rate);
-          }catch(error){ // Handle errors
-          }
+          injectCost($price, selector, state.rate);
         });
       });
     }
-  });
-})();
+  } catch (error) {
+    console.error(error);
+  }
+});

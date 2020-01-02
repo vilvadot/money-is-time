@@ -1,8 +1,9 @@
+import getConfig from './util/getConfig'
+import parseRate from './util/parseRate'
+
 const $rateInput = document.querySelector("#rate");
 const $enableCheckbox = document.querySelector("#enable");
 const $save = document.querySelector(".save--button");
-
-const parseRate = value => parseFloat(value) || DEFAULT_RATE
 
 const updateRate = () => {
   const updatedRate = parseRate($rateInput.value)
@@ -21,7 +22,7 @@ const togglePrices = event => {
 }
 
 // Sync UI with storage
-browser.storage.local.get().then(state => {
+getConfig().then(state => {
   $rateInput.value = parseRate(state.rate)
   $enableCheckbox.checked = state.isEnabled
 })

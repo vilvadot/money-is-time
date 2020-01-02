@@ -1,4 +1,4 @@
-import extension from './util/extension'
+import getConfig from './util/getConfig'
 
 const INITIAL_STATE = {
   rate: 6,
@@ -10,7 +10,7 @@ const setInitialState = () => {
 }
 
 // Sync UI with storage
-browser.storage.local.get().then(state => {
+getConfig().then(state => {
   const isFirstExecution = !Object.keys(state).length
   if(isFirstExecution){
     setInitialState()
