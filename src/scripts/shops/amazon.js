@@ -5,12 +5,13 @@ const PERCENTAGE_SYMBOL = "%";
 
 const cleanCurrencies = (fullPrice = "") => {
   const numberRegex = /\d+(,|.)?\d+/g;
-
   const number = fullPrice
-    .trim()
-    .match(numberRegex)[0]
-    .replace(",", ".");
+  .trim()
+  .match(numberRegex)[0]
+  .replace('.', '')
+  .replace(",", ".");
   const price = parseFloat(number);
+  console.log({fullPrice, price})
 
   return price;
 };
@@ -60,6 +61,7 @@ const getConfig = () => {
         const $prices = document.querySelectorAll(selector);
         $prices.forEach($price => {
           try{
+            console.log({rate: state.rate})
             addTimeCost($price, selector, state.rate);
           }catch(error){ // Handle errors
           }

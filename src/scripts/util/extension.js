@@ -1,3 +1,4 @@
+// Unify browser APIs - https://raw.githubusercontent.com/EmailThis/extension-boilerplate/master/src/scripts/utils/ext.js
 const apis = [
   'alarms',
   'bookmarks',
