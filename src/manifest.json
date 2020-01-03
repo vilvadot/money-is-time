@@ -39,7 +39,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.amazon.es/*", "*://*.amazon.com/*"],
-      "js": ["scripts/shops/amazon.js"]
+      "js": ["scripts/shops/amazon/index.js"]
     }
   ],
   "background": {
