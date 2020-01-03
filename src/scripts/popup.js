@@ -1,5 +1,6 @@
 import getConfig from './util/getConfig'
 import parseRate from './util/parseRate'
+import extension from './util/extension'
 
 const $rateInput = document.querySelector("#rate");
 const $enableCheckbox = document.querySelector("#enable");
@@ -7,14 +8,14 @@ const $save = document.querySelector(".save--button");
 
 const updateRate = () => {
   const updatedRate = parseRate($rateInput.value)
-  browser.storage.local.set({
+  extension.storage.local.set({
     rate: updatedRate
   });
 };
 
 const togglePrices = event => {
   const isEnabled = event.target.checked
-  browser.storage.local.set({
+  extension.storage.local.set({
     isEnabled,
   });
 

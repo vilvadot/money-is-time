@@ -4,25 +4,41 @@
   "name": "money-is-time",
   "version": "1.0",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "browser_action": {
-    "browser_style": true,
-    "default_icon": {
-      "16": "icons/icon.svg",
-      "32": "icons/icon.svg"
-    },
     "default_title": "Money is time 💸",
     "default_popup": "popup.html",
+    "browser_style": true,
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
     "theme_icons": [
       {
-        "light": "icons/icon.svg",
-        "dark": "icons/icon_darkmode.svg",
+        "light": "icons/icon16.png",
+        "dark": "icons/icon16.png",
         "size": 16
+      },
+      {
+        "light": "icons/icon48.png",
+        "dark": "icons/icon48.png",
+        "size": 48
+      },
+      {
+        "light": "icons/icon128.png",
+        "dark": "icons/icon128.png",
+        "size": 128
       }
     ]
   },
   "content_scripts": [
     {
-      "matches": ["*://*.amazon.es/*"],
+      "matches": ["*://*.amazon.es/*", "*://*.amazon.com/*"],
       "js": ["scripts/shops/amazon.js"]
     }
   ],

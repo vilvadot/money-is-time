@@ -3,9 +3,10 @@ import calcTime from "../util/calcTime";
 import extractPrice from "../util/extractPrice";
 
 const PERCENTAGE_SYMBOL = "%";
+const DEAL_PRICE = '.dealPriceText'
 const LIST_VIEW_PRICE = ".a-price-whole";
 const GENERIC_PRICE = ":not(.a-color-price) > .a-color-price"; // avoids the insertion of duplicated nodes
-const PRICE_SELECTORS = [GENERIC_PRICE, LIST_VIEW_PRICE];
+const PRICE_SELECTORS = [GENERIC_PRICE, LIST_VIEW_PRICE, DEAL_PRICE];
 
 const injectCost = ($node, selector, rate) => {
   const $cost = document.createElement("b");
