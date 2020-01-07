@@ -29,6 +29,10 @@ After each change you will have to manually reload the extension by pressing the
 Use `npm run build` to copy and bundle all appropiate files under /dist.
 You can run `npm run release` to generate a zipped release under /bin
 
+### I want X shop added to the extension!
+
+Feel free to comment on this issue https://github.com/vilvadot/money-is-time/issues/1 so that everyone can see it or send a PR to include the support.
+
 ### Credit
 
 * Logo: (https://thenounproject.com/search/?q=time%20money&i=2976120)[Money Time by alison from the Noun Project]
