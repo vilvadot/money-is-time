@@ -7,8 +7,7 @@
     "copy-files": "cp -r src/. dist && cp index.html dist",
     "build": "parcel build src/scripts/{**,**/*,**/**/*} --out-dir dist/scripts/ --no-source-maps",
     "release": "npm run copy-files && npm run build && npm run zip",
-    "zip:firefox": "cd dist && zip -r ../bin/firefox.zip *",
-    "zip": "echo 'Zipping extensions...' && npm run zip:firefox"
+    "zip": "echo 'Zipping extension...' && cd dist && zip -r ../bin/release.zip *"
   },
   "keywords": [
     "extension",
