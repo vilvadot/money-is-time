@@ -31,7 +31,7 @@ You can run `npm run release` to generate a zipped release under /bin
 
 ### I want X shop added to the extension!
 
-Feel free to comment on this issue https://github.com/vilvadot/money-is-time/issues/1 so that everyone can see it or send a PR to include the support.
+Feel free to comment on [This issue](https://github.com/vilvadot/money-is-time/issues/1) so that everyone can see it or send a PR to include the support.
 
 ### Credit
 
