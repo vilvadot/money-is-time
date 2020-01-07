@@ -1,3 +1,6 @@
+# Money is Time
+
+<img width="450" src="https://user-images.githubusercontent.com/8507571/71910068-80314700-3171-11ea-91a9-52ed5d772282.png"/>
 
 > “When you buy something, you are not paying for it with money. You’re paying with the hours of life you had to spend earning that money.“ - José Mújica
 
@@ -11,12 +14,15 @@ Go to `about:debugging#/runtime/this-firefox` and click **Load Temporary Add-on.
 
 After each change you will have to press the **Reload** button on the same page for change to take effect.
 
+<img width="450" alt="Screenshot 2020-01-07 at 17 14 30" src="https://user-images.githubusercontent.com/8507571/71910073-81fb0a80-3171-11ea-8e90-8672261e1676.png">
+
 #### Using with Chrome
 
 Go to `chrome://extensions/` and toggle **developer mode** press **Load unpacked** and select the /dist folder.
 
 After each change you will have to manually reload the extension by pressing the refresh button in this same page.
 
+<img width="450" alt="Screenshot 2020-01-07 at 17 14 13" src="https://user-images.githubusercontent.com/8507571/71910075-8293a100-3171-11ea-8564-48d5fdad4ea3.png">
 
 ### How to build the extension
 
