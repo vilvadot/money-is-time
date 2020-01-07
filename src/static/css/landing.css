@@ -1,0 +1,144 @@
+* {
+  font-family: var(--font-family);
+}
+:root {
+  --color-primary: #a2e15a;
+  --color-grey: #a2e15a;
+  --font-family: "Raleway", sans-serif;
+  --font-weight-regular: 300;
+  --font-weight-bold: 600;
+}
+.primary-color {
+  color: var(--color-primary);
+}
+#logo {
+  width: 24px;
+}
+#header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 8rem;
+}
+#header .title {
+  display: flex;
+  align-items: center;
+}
+#header h1,
+h2 {
+  margin: 0 !important;
+}
+#logo {
+  margin-right: 8px;
+}
+.header_subtitle {
+  padding-top: 4px;
+  padding-left: 8px;
+}
+#claim {
+  margin-bottom: 32px;
+}
+#claim i {
+  font-size: 1.5rem;
+}
+.download-button {
+  background: #ffffff;
+  box-shadow: 0 0 23px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  margin-right: 24px;
+  font-weight: bold;
+}
+.download-button svg {
+  margin-right: 8px;
+}
+/* Utils */
+.buttons_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spacer--sm {
+  height: 40px;
+  width: 100%;
+}
+.spacer--md {
+  height: 100px;
+  width: 100%;
+}
+.content_info {
+  padding-right: 40px;
+}
+#claim i {
+  float: right;
+  opacity: 0.4;
+  padding-top: 20px;
+  font-style: italic;
+  font-weight: lighter;
+}
+.products {
+  display: flex;
+}
+.product {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.product img {
+  object-fit: contain;
+  margin-bottom: 24px;
+  max-height: 200px;
+  margin-left: -20px !important;
+}
+.products > div {
+  padding: 10px;
+}
+.product_title {
+  color: #0091ff;
+  font-weight: var(--font-weight-bold);
+}
+.product > .product_description .product_rating {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 425px) {
+  #header {
+    margin-bottom: 2rem;
+  }
+  #header .title {
+    font-size: 1rem;
+  }
+  .content {
+    padding: 2rem;
+    text-align: center;
+  }
+  .content_info {
+    padding: 0;
+  }
+  .buttons_row {
+    flex-direction: column;
+  }
+  .download-button {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .products {
+    flex-direction: column;
+  }
+  .product {
+    margin-top: 32px;
+  }
+  .product img {
+    margin-left: 0 !important;
+  }
+}
