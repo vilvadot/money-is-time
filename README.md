@@ -1,5 +1,8 @@
 # Money is Time
 
+For Firefox: https://addons.mozilla.org/en-GB/firefox/addon/money-is-time/
+For Chrome: https://chrome.google.com/webstore/detail/money-is-time/fkgbngbefjfldlclfbidiefendamggpo
+
 <img width="450" src="https://user-images.githubusercontent.com/8507571/71910068-80314700-3171-11ea-91a9-52ed5d772282.png"/>
 
 > “When you buy something, you are not paying for it with money. You’re paying with the hours of life you had to spend earning that money.“ - José Mújica
