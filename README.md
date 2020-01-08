@@ -1,12 +1,22 @@
 # Money is Time
 
+<img width="450" src="https://user-images.githubusercontent.com/8507571/71910068-80314700-3171-11ea-91a9-52ed5d772282.png"/>
+
+> “When you buy something, you are not paying for it with money. You’re paying with the hours of life you had to spend earning that money.“ - José Mújica
+
 - For Firefox: https://addons.mozilla.org/en-GB/firefox/addon/money-is-time/
 
 - For Chrome: https://chrome.google.com/webstore/detail/money-is-time/fkgbngbefjfldlclfbidiefendamggpo
 
-<img width="450" src="https://user-images.githubusercontent.com/8507571/71910068-80314700-3171-11ea-91a9-52ed5d772282.png"/>
+### Supported shops
 
-> “When you buy something, you are not paying for it with money. You’re paying with the hours of life you had to spend earning that money.“ - José Mújica
+- Amazon.com
+- Amazon.es
+
+#### I want X shop added to the extension!
+
+Feel free to comment on [This issue](https://github.com/vilvadot/money-is-time/issues/1) so that everyone can see it or send a PR to include the support.
+
 
 ### Developing
 
@@ -34,10 +44,6 @@ After each change you will have to manually reload the extension by pressing the
 Use `npm run build` to copy and bundle all appropiate files under /dist.
 
 You can run `npm run release` to generate a zipped release under /bin
-
-### I want X shop added to the extension!
-
-Feel free to comment on [This issue](https://github.com/vilvadot/money-is-time/issues/1) so that everyone can see it or send a PR to include the support.
 
 ### Credit
 
