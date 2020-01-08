@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "name": "money-is-time",
   "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
+  "homepage_url": "https://moneyistime.vilva.io/",
   "icons": {
     "16": "static/icons/icon16.png",
     "48": "static/icons/icon48.png",
