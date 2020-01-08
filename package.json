@@ -1,6 +1,6 @@
 {
   "name": "money-is-time-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "You don't buy things with money. But with the time you spent to earn that money.",
   "scripts": {
     "dev": "nodemon --watch src/ -e js,html,json,svg --exec npm run release",
