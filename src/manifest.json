@@ -2,7 +2,7 @@
   "description": "Adds a time cost to product prices online.",
   "manifest_version": 2,
   "name": "money-is-time",
-  "version": "1.0",
+  "version": "1.0.1",
   "homepage_url": "https://moneyistime.vilva.io/",
   "icons": {
     "16": "static/icons/icon16.png",
